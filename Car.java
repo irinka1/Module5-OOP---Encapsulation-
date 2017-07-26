@@ -73,9 +73,9 @@ public class Car {
     }
 
     //Изменить текущую скорость
-    public void speedNow(){
-        speedNow=0;
-        System.out.println("Текущая скорость 0 км/час");
+       public void speedNow(int newSpeed){
+        speedNow = newSpeed;
+        System.out.println("Теперь текущаю скороть равна = " + speedNow);
     }
 
     //Посадить 1 пассажира в машину
