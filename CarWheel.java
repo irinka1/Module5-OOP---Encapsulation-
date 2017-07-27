@@ -33,7 +33,8 @@ public class CarWheel {
 
     public CarWheel(){
         this.conditionWheel = conditionWheel;
-        this.newWheel = true; // новая шина
+        this.newWheel = true;
+        conditionWheel = 1;// новая шина
         //this.persent = persent;
 
     }
@@ -47,18 +48,15 @@ public class CarWheel {
 
     //Стереть шину на X%
     public double steretWheel(double persent){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("на сколько % стереть шину?");
-        persent = sc.nextDouble();
-        conditionWheel = 1-percent/100;
-        System.out.println("Наша шина стерта на " + percent+ "% и теперь имеет состояние стертости " + conditionWheel);
+
+        conditionWheel *= (1 - (persent / 100));
+        System.out.println("Наша шина стерта на " + persent+ "% и теперь имеет состояние стертости " + conditionWheel);
 
         return conditionWheel;
 
     }
 
     //Вывести в консоль данные об объекте
-
     public void infoWheel(){
         if ( conditionWheel > 0 && conditionWheel <= 1){
             System.out.println("Шина новая, менять не надо.");
