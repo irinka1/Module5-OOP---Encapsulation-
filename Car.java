@@ -1,3 +1,4 @@
+//import java.util.ArrayList;
 
 package DZ5;
 /*Класс Car.
@@ -41,6 +42,7 @@ package DZ5;
         олес и наличия водителя)
 
         */
+import java.util.ArrayList;
 
 public class Car {
     private String date;
@@ -50,8 +52,8 @@ public class Car {
     private int passangers;
     private int PassangersNow;
     private int speedNow;
-    private int [] cardoors = new int[4];
-    private int [] carwheels = new int[4];
+    private CarDoor[] cardoors = new CarDoor[4];     //масив з 4 дверей
+    private CarWheel[] carwheels = new CarWheel[4];
     private int countWheels;
     private int countDoors;
 
@@ -73,7 +75,7 @@ public class Car {
     }
 
     //Изменить текущую скорость
-       public void speedNow(int newSpeed){
+    public void speedNow(int newSpeed){
         speedNow = newSpeed;
         System.out.println("Теперь текущаю скороть равна = " + speedNow);
     }
@@ -98,15 +100,32 @@ public class Car {
         return PassangersNow;
     }
 
-    // Получить дверь по индексу
-    public void indexDoor(int c){
-
-        // for (c=0, c <= countWheels; c++){
-        //    return cardoors[c];
-        // }
+    // Получить дверь и колесо по индексу
+    public void setCarDoors(){
+        for (int i = 0; i < 4; i++){
+            cardoors[i] = new CarDoor();
+        }
     }
 
+    public void setCarWheels(){
+        for (int i=0; i < 4; i++){
+            carwheels[i] = new CarWheel();
+        }
+    }
 
+        public CarDoor getCarDoor(int i) {
+            if ((i >= 0) && (i <= 4 - 1)) {
+               
+            }
+            return cardoors[i];
+        }
+
+    public CarWheel getCarWheel(int i) {
+        if ((i >= 0) && (i <= 4 - 1)) {
+           
+        } 
+        return carwheels[i];
+    }
     // Снять все колеса с машины
     public void removeWheels(){
         countWheels = 0;
@@ -146,7 +165,7 @@ public class Car {
         System.out.println("Дата производства: " +date);
         System.out.println("Тип двигателя: " + type);
         System.out.println("Максимальная скорость новой машины: " + maxSpeed);
-        System.out.println("время разгона до 100км/ч = " + timeToMax);
+        System.out.println("Время разгона до 100км/ч = " + timeToMax);
         System.out.println("Пассажировместимость = " + passangers);
         System.out.println("Кол-во пасажиров внутри в данный момент = " + PassangersNow);
         System.out.println("Текущая скорость = " + speedNow);
