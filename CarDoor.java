@@ -36,7 +36,8 @@ public class CarDoor {
             System.out.println("Открыть закрытую дверь");
             door = false;
 
-        } else {
+        } else 
+        {
 
             System.out.printf("Закрыть открытую дверь");
             door = true;
