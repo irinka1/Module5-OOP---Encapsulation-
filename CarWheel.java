@@ -23,19 +23,12 @@ public class CarWheel {
 
     private double conditionWheel;
     private boolean newWheel;
-    private double percent;
 
-    // private double i = 0;
-    // double[] array;
-    // array = new double[i];
-    // for (double i = 0; i < 1; i++) {
-    // array[i] = ((int)(Math.random() * 12) - 15);
 
     public CarWheel(){
         this.conditionWheel = conditionWheel;
         this.newWheel = true;
-        conditionWheel = 1;// новая шина
-        //this.persent = persent;
+        conditionWheel = 1;
 
     }
 
