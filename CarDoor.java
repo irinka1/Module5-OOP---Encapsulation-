@@ -30,7 +30,7 @@ public class CarDoor {
     }
 
 
-    public void checkDoor() {    //открыть/закрыть дверь
+    public void checkDoorAndAction() {    //открыть/закрыть дверь
         //(если дверь открыта и вызывается эта функция, значит дверь необходимо закрыть и наоборот)
         if (door) {
             System.out.println("Открыть закрытую дверь");
@@ -61,7 +61,7 @@ public class CarDoor {
     }
 
     //открыть/закрыть окно(если дверь открыта и вызывается эта функция, значит дверь необходимо закрыть и наоборот)
-    public void checkWindow() {
+    public void checkWindowAndAction() {
         if (window = true) {
             System.out.println("необходимо открыть закрытое окно");
             window = false;
