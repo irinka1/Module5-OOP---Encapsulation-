@@ -2,45 +2,43 @@
 
 package DZ5;
 /*Класс Car.
-На прямую к переменным этого класса никто не может, только через методы
+Directly to the variables of this class, no one can, only through methods
         --------------------
-        Хранит:
-        дата производства (не изменна после создания объекта)
-        тип двигателя
-        максимальная скорость машины (если она новая)
-        время разгона до 100км/ч
-        пассажировместимость
-        кол-во пасажиров внутри в данный момент
-        текущая скорость
-        массив колес
-        массив дверей
+        Stores:
+        date of production (not changed after the creation of the object)
+        engine's type
+        the maximum speed of the machine (if it is new)
+        acceleration time up to 100 km / h
+        passenger capacity
+        number of passengers inside at the moment
+        current speed
+        wheel array
+        door array
 
-        Конструктор
+       Constructor
         --------------------
-        Нет пустого конструктора. Так как есть поля в классе, которые нельзя изменять после создания объекта.
-        Например дата производства.
-        Конструктор с датой производства.
-        Конструктор со всеми полями, кроме массива колес и массива дверей.
+        There is no empty constructor. Because there are fields in the class that can not be changed after the object is created.
+        For example, the production date.
+        Designer with the date of production.
+        A constructor with all fields except the array of wheels and the array of doors.
 
-        Методы
+        Methods
         --------------------
-        Изменить текущую скорость
-        Посадить 1 пассажира в машину
-        Высадить 1 пассажира
-        Высадить всех пассажиров
-        Получить дверь по индексу
-        Получить колесо по индексу
-        Снять все колеса с машины
-        Установить на машину X новых колесу (в добаков к имеющимся, то есть если было 4 колеса,
-        после вызова метода с Х аргументом равным трем, колес будет 4+3=7)
+        Change the current speed
+        To put 1 passenger in the car
+        Disembark 1 passenger
+        Disembark all passengers
+        Get the door by index
+        Get the wheel by index
+        Remove all wheels from the car
+        Install the new wheel on the machine X (in addition to the existing ones, that is, if there were 4 wheels,
+        after calling the method with X argument equal to three, the wheel will be 4 + 3 = 7)
+       Calculate the current possible maximum speed (The speed of the machine is calculated as follows.
+        The maximum speed of the new machine is multiplied by the most worn out wheel in the car.
+        The maximum speed is 0 if there is not one passenger in the car, since there is no one to drive it)
 
-        Вычислить текущую возможную максимальную скорость (Скорость машины вычисляется так.
-        Максимальная скорость новой машины множиться на самое стертое колесо в машине.
-        Максимальная скорость равна 0 если в машине нет ни одного пассажира, так как некому ее вести)
-
-        Вывести в консоль данные об объекте (все поля и вычисленную максимальную скорость в зависимости от целостности к
-        олес и наличия водителя)
-
+        Output to the console data about the object (all fields and the calculated maximum speed, depending on the integrity of the
+        oles and driver availability)
         */
 import java.util.ArrayList;
 
@@ -52,7 +50,7 @@ public class Car {
     private int passangers;
     private int PassangersNow;
     private int speedNow;
-    private CarDoor[] cardoors = new CarDoor[4];     //масив з 4 дверей
+    private CarDoor[] cardoors = new CarDoor[4];     
     private CarWheel[] carwheels = new CarWheel[4];
     private int countWheels;
     private int countDoors;
@@ -74,33 +72,33 @@ public class Car {
         this.countDoors=4;
     }
 
-    //Изменить текущую скорость
+    //Change the current speed
     public void speedNow(int newSpeed){
         speedNow = newSpeed;
-        System.out.println("Теперь текущаю скороть равна = " + speedNow);
+        System.out.println("Now the current speed is= " + speedNow);
     }
 
-    //Посадить 1 пассажира в машину
+    //To put 1 passenger in the car
     public int PassangersPlus(){
         PassangersNow=PassangersNow+1;
-        System.out.println("теперь количество пассажиров = "+PassangersNow);
+        System.out.println("now the number of passengers = "+PassangersNow);
         return PassangersNow;
     }
-    // Высадить 1 пассажира
+    // Out 1 passenger
     public int PassangersMinus1(){
         PassangersNow=PassangersNow-1;
-        System.out.println("теперь количество пассажиров = "+PassangersNow);
+        System.out.println("now the number of passengers = "+PassangersNow);
         return PassangersNow;
     }
 
-    //Высадить всех пассажиров
+    //Out all passengers
     public int outPassangers(){
         PassangersNow=0;
-        System.out.println("Высадили всех пассажиров. Теперь количество пассажиров = "+PassangersNow);
+        System.out.println("now the number of passengers = "+PassangersNow);
         return PassangersNow;
     }
 
-    // Получить дверь и колесо по индексу
+    // Get the door and wheel by the index
     public void setCarDoors(){
         for (int i = 0; i < 4; i++){
             cardoors[i] = new CarDoor();
@@ -126,49 +124,49 @@ public class Car {
         } 
         return carwheels[i];
     }
-    // Снять все колеса с машины
+    // Remove all wheels from the car
     public void removeWheels(){
         countWheels = 0;
         System.out.println("Все колеса сняты");
 
     }
 
-    //Установить на машину X новых колесу (в добаков к имеющимся, то есть если было 4 колеса,
-    // после вызова метода с Х аргументом равным трем, колес будет 4+3=7)
+    //Install the new wheel on the machine X (in addition to the existing ones, that is, if there were 4 wheels,
+    // after calling the method with X argument equal to three, the wheel will be 4 + 3 = 7)
 
     public int increseWheel(int w){
 
         countWheels=countWheels+w;
-        System.out.println("Текущее количество колес = " + countWheels);
+        System.out.println("Current number of wheels= " + countWheels);
         return countWheels;
 
     }
 
-    // Вычислить текущую возможную максимальную скорость (Скорость машины вычисляется так.
-    // Максимальная скорость новой машины множиться на самое стертое колесо в машине.
-    // Максимальная скорость равна 0 если в машине нет ни одного пассажира, так как некому ее вести)
+    // Calculate the current possible maximum speed (The speed of the machine is calculated as follows.
+    // The maximum speed of the new machine is multiplied by the most worn out wheel in the car.
+    // The maximum speed is 0 if there is not one passenger in the car, since there is no one to drive it)
     public void maxSpeed(int samoeStertoe){
         if(PassangersNow > 0) {
             speedNow = maxSpeed * samoeStertoe;
-            System.out.println("Максимальная скорость сейчас = " + speedNow);
+            System.out.println("Top speed now = " + speedNow);
         }
         else {
-            System.out.println("Максимальная скорость равна 0,  так как нет пассажиров");
+            System.out.println("The maximum speed is 0, since there are no passengers");
         }
 
     }
 
-    //Вывести в консоль данные об объекте (все поля и вычисленную максимальную скорость в зависимости от целостности
-    // колес и наличия водителя)
+    //Output to the console data about the object (all fields and the calculated maximum speed depending on the integrity
+    // wheels and driver availability)
 
     public void infoCar(){
-        System.out.println("Дата производства: " +date);
-        System.out.println("Тип двигателя: " + type);
-        System.out.println("Максимальная скорость новой машины: " + maxSpeed);
-        System.out.println("Время разгона до 100км/ч = " + timeToMax);
-        System.out.println("Пассажировместимость = " + passangers);
-        System.out.println("Кол-во пасажиров внутри в данный момент = " + PassangersNow);
-        System.out.println("Текущая скорость = " + speedNow);
+        System.out.println("date of manufacture: " +date);
+        System.out.println("engine's type: " + type);
+        System.out.println("The maximum speed of a new machine: " + maxSpeed);
+        System.out.println("Acceleration time to 100 km / h= " + timeToMax);
+        System.out.println("Passenger capacity = " + passangers);
+        System.out.println("Number of passengers inside at the moment = " + PassangersNow);
+        System.out.println("Current speed = " + speedNow);
     }
 
 
