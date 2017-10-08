@@ -1,21 +1,21 @@
 package DZ5;
-/*Класс CarWheel
-На прямую к переменным этого класса никто не может, только через методы
+/ * CarWheel class
+Directly to the variables of this class, no one can, only through methods
 --------------------
-Хранит:
-Состояние целостности шины (дробное число от 0-стерта до 1-новая)
+Stores:
+Bus integrity status (fractional number from 0-erased to 1-new)
 
-Конструктор
+Constructor
 --------------------
-Аналогичный принцип как в классе CarDoor
+A similar principle as in the CarDoor class
 
-Методы
+Methods
 --------------------
-Сменить шину на новую
-Стереть шину на X%
-Получить состояние (return)
-Вывести в консоль данные об объекте
-*/
+Change the bus to a new one
+Erase the tire by X%
+Get the state (return)
+Display information about the object in the console
+* /
 
 import java.util.Scanner;
 
@@ -35,7 +35,7 @@ public class CarWheel {
     //Сменить шину на новую
     public void changeWheel(){
         if (newWheel=false) {
-            System.out.println("необходимо заменить шину на новую");
+            System.out.println("It is necessary to replace the wheel with a new one");
         }
     }
 
@@ -43,19 +43,19 @@ public class CarWheel {
     public double steretWheel(double persent){
 
         conditionWheel *= (1 - (persent / 100));
-        System.out.println("Наша шина стерта на " + persent+ "% и теперь имеет состояние стертости " + conditionWheel);
+        System.out.println("Our tire is worn out on" + persent+ "% and now has a state of erasure " + conditionWheel);
 
         return conditionWheel;
 
     }
 
-    //Вывести в консоль данные об объекте
+    //Display information about the object in the console
     public void infoWheel(){
         if ( conditionWheel > 0 && conditionWheel <= 1){
-            System.out.println("Шина новая, менять не надо.");
+            System.out.println("The tire is new, it is not necessary to change.");
         }
         else {
-            System.out.println("Шину необходимо заменить.");
+            System.out.println("The tire must be replaced.");
 
         }
     }
