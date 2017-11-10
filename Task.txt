@@ -1,0 +1,66 @@
+Task 1
+
+Create a package matching (name to your taste, but should be logically associated with class names) package
+and place there all subsequent classes.
+
+Class CarDoor
+
+Directly to the variables of this class, no one can, only through methods
+Stores
+    door status (open / closed)
+    window state (open / closed)
+
+Constructor
+    One without arguments. It must assign variables to variables in case there is no data.
+    One designer accepts both states, doors and windows. Assigns these values ​​to variables within the object.
+Methods
+    open the door
+    close the door
+    open / close the door (if the door is open and this function is called, then the door must be closed and vice versa)
+    open the window
+    close a window
+    open / close the window (if the door is open and this function is called, then the door must be closed and vice versa)
+    Display information about the object in the console
+    
+Class CarWheel
+
+Directly to the variables of this class, no one can, only through methods
+Stores
+     Bus integrity status (fractional number from 0-erased to 1-new)
+Constructor
+     A similar principle as in the CarDoor class
+Methods
+     Change the bus to a new one
+     Erase the tire by X%
+     Get the state (return)
+     Display information about the object in the console
+     
+Car class
+
+Directly to the variables of this class, no one can, only through methods
+Stores
+     date of production (unchanged after the creation of the object)
+     engine's type
+     the maximum speed of the machine (if it is new)
+     acceleration time up to 100 km / h
+     passenger capacity
+     number of passengers inside at the moment
+     current speed
+     wheel array
+     door array
+     
+Constructor
+    There is no empty constructor. Because there are fields in the class that can not be changed after the object is created. For example, the production date.
+    Designer with the date of production.
+    A constructor with all fields except the array of wheels and the array of doors.
+Methods
+    Change the current speed
+    To put 1 passenger in the car
+    Disembark 1 passenger
+    Disembark all passengers
+    Get the door by index
+    Get the wheel by index
+    Remove all wheels from the car
+    Install the new wheel on the machine X (in addition to the existing ones, that is, if there were 4 wheels, after calling the method with X argument equal to three, the wheel will be 4 + 3 = 7)
+    Calculate the current possible maximum speed (speed of the machine is calculated as follows. The maximum speed of the new machines multiply at most erased the wheel in the car. The maximum speed is equal to 0 if there are no passengers in the car, as there is no one to lead it)
+    Output to the console data about the object (all fields and the calculated maximum speed, depending on the integrity of the wheels and the presence of the driver)
